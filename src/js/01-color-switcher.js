@@ -12,10 +12,12 @@ function handleStartBtnClick(event) {
     document.body.style.backgroundColor = getRandomHexColor();
   }, 1000);
   event.target.setAttribute('disabled', 'true');
+  refs.stopBtn.removeAttribute('disabled');
 }
 
-function handleStoptBtnClick() {
+function handleStoptBtnClick(event) {
   clearInterval(intervalId);
+  event.target.setAttribute('disabled', 'true');
   refs.startBtn.removeAttribute('disabled');
 }
 
